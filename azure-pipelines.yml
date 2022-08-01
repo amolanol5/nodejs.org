@@ -28,7 +28,7 @@ stages:
 
     - script: |
         ls -la build
-      displayName: 'listar build'
+      displayName: 'listar dist'
 
     - task: CopyFiles@2
       inputs:
