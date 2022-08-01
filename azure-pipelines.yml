@@ -33,12 +33,12 @@ stages:
     - task: CopyFiles@2
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)'
-        contents: 'build' 
+        contents: 'build/**' 
         targetFolder: $(Build.ArtifactStagingDirectory)/npm
-      displayName: 'Copy package.json'   
+      displayName: 'Copy build/**'
 
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)/npm'
-        artifactName: npm
+        artifactName: npm build output
       displayName: 'Publish npm artifact'
