@@ -26,10 +26,14 @@ stages:
         npm run build
       displayName: 'npm build'
 
+    - script: |
+        ls -la build
+      displayName: 'listar build'
+
     - task: CopyFiles@2
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)'
-        contents: 'package.json' 
+        contents: 'build' 
         targetFolder: $(Build.ArtifactStagingDirectory)/npm
       displayName: 'Copy package.json'   
 
