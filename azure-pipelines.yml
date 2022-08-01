@@ -28,7 +28,6 @@ stages:
     
     - script: |
         ls -la
-        ls -la npm
       displayName: 'show all folders' 
 
     - task: CopyFiles@2
@@ -38,8 +37,16 @@ stages:
         targetFolder: $(Build.ArtifactStagingDirectory)/npm
       displayName: 'Copy build/**'
 
+    - script: |
+        ls -la
+      displayName: 'show all folders2' 
+
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)/npm'
         artifactName: npm build output
       displayName: 'Publish npm artifact'
+
+    - script: |
+        ls -la
+      displayName: 'show all folders3' 
