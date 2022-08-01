@@ -25,10 +25,11 @@ stages:
     - script: |
         npm run build
       displayName: 'npm build'
-
+    
     - script: |
-        ls -la build
-      displayName: 'listar dist'
+        ls -la
+        ls -la npm
+      displayName: 'show all folders' 
 
     - task: CopyFiles@2
       inputs:
