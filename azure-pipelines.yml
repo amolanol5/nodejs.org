@@ -23,7 +23,7 @@ stages:
       displayName: 'npm install'
       
     - script: |
-        npm audit --json
+        npm audit --registry=https://registry.npmjs.org/
       displayName: 'npm audit'
     
     - script: |
